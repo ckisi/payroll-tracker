@@ -2,8 +2,33 @@
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
+// Gets user input to create and return an array of employee objects
 const collectEmployees = function() {
-  // TODO: Get user input to create and return an array of employee objects
+
+  let enterData = true;
+  
+  while (enterData) {
+  const firstName = window.prompt("Enter first name:");
+  // Cancels the collectEmployees function if cancel is pressed
+  if (!firstName) {
+    return;
+  }
+  
+  const lastName = window.prompt("Enter last name:");
+  // Cancels the collectEmployees function if cancel is pressed
+  if (!lastName) {
+    return;
+  }
+  
+  const salary = window.prompt("Enter salary:");
+  // Cancels the collectEmployees function if cancel is pressed
+  if (!salary) {
+    return;
+  }
+  
+  // If OK is pressed, the while loop continues; if cancel is pressed, the while loop ends
+  enterData = window.confirm("Would you like to add another employee?");
+  }
 }
 
 // Display the average salary
