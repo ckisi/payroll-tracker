@@ -55,8 +55,19 @@ const displayAverageSalary = function(employeesArray) {
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
-  // TODO: Select and display a random employee
+  // Selects a random employee
+  function getRandomInt(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+  }
+  const randomIndex = getRandomInt(0, employeesArray.length - 1);
+  const randomEmployee = employeesArray[randomIndex];
+  // Log the random employee
+  console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
+  return randomEmployee;
 }
+
 
 /*
   ====================
