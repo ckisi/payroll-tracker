@@ -13,22 +13,24 @@ const collectEmployees = function() {
   while (enterData) {
   let firstName = window.prompt("Enter first name:");
   // Cancels the collectEmployees function if cancel is pressed
-  if (!firstName) {
-    return;
+  if (firstName === null) {
+    break;
   }
   
   let lastName = window.prompt("Enter last name:");
   // Cancels the collectEmployees function if cancel is pressed
-  if (!lastName) {
-    return;
+  if (lastName === null) {
+    break;
   }
   
   let salary = window.prompt("Enter salary:");
   // Cancels the collectEmployees function if cancel is pressed
-  if (!salary) {
-    return;
+  if (salary === null) {
+    break;
+  } else if (isNaN(salary)) {
+    salary = 0;
   }
-  
+
   // Creates an object out of the 3 responses
   let employeeObject = { firstName: firstName, lastName: lastName, salary: salary };
   // Adds the object to the array
@@ -42,7 +44,13 @@ const collectEmployees = function() {
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
-  // TODO: Calculate and display the average salary
+  // Calculates the average salary
+  const totalSalary = employeesArray.reduce((acc, employee) => acc + parseFloat(employee.salary), 0);
+  const averageSalary = totalSalary / employeesArray.length;
+  // Format to two decimal places
+  const formattedAverageSalary = averageSalary.toFixed(2);
+  // Logs the number of employees and the average salary to the console
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $${formattedAverageSalary}`);
 }
 
 // Select a random employee
