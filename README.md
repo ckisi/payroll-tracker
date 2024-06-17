@@ -11,6 +11,8 @@ Opening the console will give you the average salary of all the employees, as we
 HTML, CSS, JavaScript
 
 ## Links
-
+https://ckisi.github.io/payroll-tracker/
+https://github.com/ckisi/payroll-tracker
 
 ## Screenshot
+![screenshot]
